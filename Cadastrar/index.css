@@ -1,0 +1,68 @@
+.bodyCrud {
+    background-color: #FEAF00;
+}
+
+
+.Crud {
+  flex-direction: column;
+  justify-content: center; /* centraliza na horizontal */
+  align-items: center;     /* centraliza na vertical */
+  width: 400px;
+  margin: 150px auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #FEAF00;
+  
+
+}
+
+
+.CrudOp { 
+    text-align: center;
+
+}
+
+
+.LoginCSS  {
+    text-align: center;
+}
+
+.credenciais {
+    text-align: center;
+}
+
+
+.botaoEmail {
+    width:380px;
+    padding: 10px;
+    border: 5px #a88484;
+}
+
+.botaoCadastrar {
+    background-color: #FEAF00;
+    width: 400px;
+    text-align: center;
+    padding: 10px;
+    border: 20px;
+    border-radius: 10px;
+}
+
+
+.SelecioneData {
+    display: flex;
+    text-align: center;
+    padding: 10px;
+    border-radius: 200px;
+}
+
+.formData{
+    margin-right: 15px;
+}
+
+.meuSelect {
+    height: 40px;
+    border-radius: 10px
+}
+
+

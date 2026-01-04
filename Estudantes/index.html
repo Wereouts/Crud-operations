@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudantes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="site">
+    <div class="menuEsquerda">
+        <h1 class="CrudOp">CRUD OPERATIONS</h1>
+        <img src="/Home/imagens/eu.jpg" alt="fotoDusGuri" class="fotoDosGuri">
+        <p></p> <strong class="nome">Guilherme </strong></p>
+        <p2></p2> <strong class="admin">Admin</strong></p2>
+        <br>
+        <br>
+        <form>
+            <button class="botoes">Home</button>
+            <button class="botoes">Curso</button>
+            <button class="botoes">Estudos</button>
+            <button class="botoes">Pagamento</button>
+            <button class="botoes">Report</button>
+            <button class="botoes">Configurações</button>
+
+            <br>
+            <br>
+            <a class="Logout" href="/Login/index.html"><strong>Logout</strong></a>
+        </form>
+    </div>
+
+
+    <div class="MenuDireita">
+
+        <div class="barraPesquisa">
+            <input class="Pesquisar" placeholder="Pesquisar...">
+            <i class="fas fa-search"></i>
+        </div>
+
+        <div class="topoLista">
+            <h2>Lista de estudantes</h2>
+            <button class="btnAdd">ADD NOVO ESTUDANTE</button>
+        </div>
+
+        <dialog id="modalCadastro">
+            <h2>Cadastrar Pessoa</h2>
+            <form id="formCadastro">
+                <input type="file" id="foto" placeholder="Anexe a foto" required>
+                <input type="text" id="nome" placeholder="Nome" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="tel" id="tel" placeholder="Telefone" required>
+                <input type="text" id="documento" placeholder="Documento" required>
+                <input type="date" id="data" required>
+
+                <div class="botoes-form">
+                    <button type="submit">Salvar</button>
+                    <button type="button" id="btnFechar">Cancelar</button>
+                </div>
+            </form>
+        </dialog>
+
+
+
+        <div class="container-usuarios">
+            <div class="header-lista">
+                <span></span> <span>Name</span>
+                <span>Email</span>
+                <span>Phone</span>
+                <span>Enroll Number</span>
+                <span>Date of admission</span>
+                <span></span>
+            </div>
+
+            <div class="cadastros">
+                <div class="formUsuario">
+                    <img src="/Home/imagens/eu.jpg" alt="foto" class="fotoUsuario">
+
+                    <div class="dadosUsuario">
+                        <p>Karthi</p>
+                        <p>karthi@gmail.com</p>
+                        <p>7305477760</p>
+                        <p>1234567305477760</p>
+                        <p>08-Dec, 2021</p>
+                    </div>
+
+                    <div class="acoes">
+                        <span class="btn-edit">✎</span>
+                        <span class="btn-delete">🗑</span>
+                    </div>
+                </div>
+
+                <div id="listaUsuarios">
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+<script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud operations</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body class="bodyCrud">
+
+    <div id="loginForm" class="Crud">
+        <h1 class="CrudOp">Crud operations</h1>
+        <h2 class="LoginCSS">Login</h2>
+        <p class="credenciais">Coloco suas credenciais para acessar sua conta</p>
+        <form id="form-login">
+            <p>Email</p>
+            <label for="email"></label>
+            <input type="text" id="email" name="e-mail_completo" placeholder="Coloque seu e-mail" class="botaoEmail">
+            <p>Senha</p>
+            <form>
+                <label for="senha"></label>
+                <input type="password" id="senha" name="senha_completa" placeholder="Coloque sua senha"
+                    class="botaoEmail">
+            </form>
+            <br>
+            <button class="botaoLogin" type="submit" onclick="verificarCadastro()">Login</button>
+            <br>
+            <p><strong onclick="clicouNoEsqueciSenha()"><u>Cadastre-se</u></strong></p>
+
+    </div>
+
+</body>
+
+<script src="index.js"></script>
+
+
+
+
+</html>
