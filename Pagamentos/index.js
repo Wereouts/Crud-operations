@@ -14,9 +14,6 @@ btnFechar.onclick = () => modal.close();
 form.onsubmit = (e) => {
     e.preventDefault(); // Impede a página de recarregar
 
-    const fotoInput = document.querySelector("#foto");
-    const file = fotoInput.files[0];
-    const fotoSrc = file ? URL.createObjectURL(file) : '';
 
     // Criar o elemento container
     const novoUsuario = document.createElement("div");
@@ -24,11 +21,11 @@ form.onsubmit = (e) => {
 
     novoUsuario.innerHTML = `
         <div class="dadosUsuario">
-            <img src="${fotoSrc}" alt="Foto" class="fotoUsuario">
             <p>${document.querySelector("#nome").value}</p>
-            <p>${document.querySelector("#email").value}</p>
-            <p>${document.querySelector("#tel").value}</p>
-            <p>${document.querySelector("#documento").value}</p>
+            <p>${document.querySelector("#PaymentSchedule").value}</p>
+            <p>${document.querySelector("#Billnumber").value}</p>
+            <p>${document.querySelector("#AmountPaid").value}</p>
+            <p>${document.querySelector("#Balanceamount").value}</p>
             <p>${document.querySelector("#data").value}</p>
         </div>
         <div class="acoes">
