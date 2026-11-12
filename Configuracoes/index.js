@@ -81,7 +81,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const confirmation = document.querySelector('#confirmPassword').value;
     const error = document.querySelector('#passwordError');
     error.textContent = '';
-    if (!current && !next && !confirmation) return true;
+    // Gerenciadores de senha podem preencher somente a senha atual automaticamente.
+    // Isso não representa uma solicitação de troca e não deve mudar a aba ativa.
+    if (!next && !confirmation) {
+      if (current) document.querySelector('#currentPassword').value = '';
+      return true;
+    }
     openSection('seguranca');
     if (!current || !next || !confirmation) { error.textContent = 'Preencha os três campos de senha.'; return false; }
     if (next.length < 8) { error.textContent = 'A nova senha deve conter pelo menos 8 caracteres.'; return false; }
