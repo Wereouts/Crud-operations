@@ -1,49 +1,27 @@
-.bodyCrud {
-    background-color: #FEAF00;
-}
-
-
-.Crud {
-  flex-direction: column;
-  justify-content: center; /* centraliza na horizontal */
-  align-items: center;     /* centraliza na vertical */
-  width: 400px;
-  margin: 150px auto;
-  background-color: white;
-  padding: 20px;
-  border-radius: 20px;
-  border: 1px solid #FEAF00;
-  
-
-}
-
-
-.CrudOp { 
-    text-align: center;
-
-}
-
-
-.LoginCSS  {
-    text-align: center;
-}
-
-.credenciais {
-    text-align: center;
-}
-
-
-.botaoEmail {
-    width:380px;
-    padding: 10px;
-    border: 5px #a88484;
-}
-
-.botaoLogin {
-    background-color: #FEAF00;
-    width: 400px;
-    text-align: center;
-    padding: 10px;
-    border: 20px;
-    border-radius: 10px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+:root { --yellow:#ffc107; --auth-bg:#f6f7f9; --auth-card:#fff; --auth-text:#171820; --auth-line:#e7e8ec; }
+* { box-sizing:border-box; }
+body { margin:0; color:var(--auth-text); background:var(--auth-bg); font-family:Inter,system-ui,sans-serif; font-size:var(--base-font-size,16px); }
+.auth-layout { display:grid; grid-template-columns:minmax(360px,42%) 1fr; min-height:100vh; }
+.auth-hero { display:flex; flex-direction:column; justify-content:space-between; padding:48px; color:#161616; background:linear-gradient(145deg,color-mix(in srgb,var(--yellow),white 25%),var(--yellow)); }
+.hero-brand,.mobile-brand { font-size:20px; font-weight:800; }
+.auth-hero h1 { max-width:520px; margin:12px 0 16px; font-size:clamp(42px,5vw,70px); line-height:1; letter-spacing:-.055em; }
+.auth-hero p:not(.eyebrow) { max-width:490px; line-height:1.7; }
+.eyebrow { margin:0; color:#715600; font-size:12px; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+.auth-panel { display:grid; place-items:center; padding:28px; }
+.auth-card { width:min(430px,100%); padding:38px; border:1px solid var(--auth-line); border-radius:22px; background:var(--auth-card); box-shadow:0 18px 50px rgba(0,0,0,.08); }
+.mobile-brand { display:none; margin-bottom:32px; }
+.auth-card h2 { margin:9px 0 7px; font-size:30px; letter-spacing:-.04em; }
+.subcopy,.signup { color:#737680; font-size:13px; }
+.auth-card label { display:grid; gap:8px; margin-top:20px; font-size:12px; font-weight:700; }
+.auth-card input { width:100%; height:48px; padding:0 14px; border:1px solid var(--auth-line); border-radius:12px; outline:0; color:var(--auth-text); background:var(--auth-card); font:inherit; }
+.auth-card input:focus { border-color:var(--yellow); box-shadow:0 0 0 4px color-mix(in srgb,var(--yellow),transparent 82%); }
+.auth-card button { width:100%; height:48px; margin-top:10px; border:0; border-radius:12px; color:#161616; background:var(--yellow); font-weight:800; cursor:pointer; }
+.form-error { min-height:18px; color:#d92d20; font-size:12px; }
+.signup { margin:24px 0 0; text-align:center; }
+.signup a { color:var(--yellow); font-weight:700; }
+.auth-hero small { opacity:.65; }
+html[data-font-size="small"] { --base-font-size:14px; } html[data-font-size="medium"] { --base-font-size:16px; } html[data-font-size="large"] { --base-font-size:18px; }
+html[data-theme="dark"] { --auth-bg:#17181d; --auth-card:#22242b; --auth-text:#f3f4f6; --auth-line:#34363e; color-scheme:dark; }
+html[data-theme="dark"] .subcopy,html[data-theme="dark"] .signup { color:#a5a8b2; }
+@media(max-width:760px){.auth-layout{grid-template-columns:1fr}.auth-hero{display:none}.auth-panel{padding:18px}.auth-card{padding:28px 22px}.mobile-brand{display:block}}

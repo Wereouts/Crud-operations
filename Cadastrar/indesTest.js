@@ -32,4 +32,6 @@ function senhaValida(p){
  }
  }
  }
+ return retorno;
+}
  }

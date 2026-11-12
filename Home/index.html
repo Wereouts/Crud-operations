@@ -1,106 +1,32 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
+<!doctype html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Painel administrativo do CRUD Operations">
+  <title>Dashboard | CRUD Operations</title><link rel="stylesheet" href="../assets/app.css">
 </head>
-
-<<<<<<< HEAD
-<script src="index.js"></script>
-=======
-
->>>>>>> 6e701b71ca712e785c506d6121c1f1a12de3f66f
-
-<body class="site">
-    <div class="menuEsquerda">
-        <h1 class="CrudOp">CRUD OPERATIONS</h1>
-        <img src="/Home/imagens/eu.jpg" alt="fotoDusGuri" class="fotoDosGuri">
-        <p></p> <strong class="nome">Guilherme </strong></p>
-        <p2></p2> <strong class="admin">Admin</strong></p2>
-        <br>
-        <br>
-        <form>
-            <button class="botoes">Home</button>
-<<<<<<< HEAD
-            <button class="botoes">Curso</button>
-            <button class="botoes">Estudos</button>
-=======
-            <button class="botoes">Curso</button>   
-            <button class="botoes" type="button" onclick="window.location.href='../Estudantes/index.html'">Estudos</button>
->>>>>>> 6e701b71ca712e785c506d6121c1f1a12de3f66f
-            <button class="botoes">Pagamento</button>
-            <button class="botoes">Report</button>
-            <button class="botoes">Configurações</button>
-
-            <br>
-            <br>
-            <a class="Logout" href="/Login/index.html"><strong>Logout</strong></a>
-        </form>
-    </div>
-
-
-    <div class="MenuDireita">
-
-        <div class="barraPesquisa">
-            <input class="Pesquisar" placeholder="Pesquisar...">
-            <i class="fas fa-search"></i>
-        </div>
-
-        <div class="Dashboards">
-
-            <div class="Estudos">
-                <img src="/Home/imagens/graduation-cap 1.png" alt="Gorro de graduação" class="gorro">
-                <p class="pEstudos">Estudos</p>
-                <p2 class="valorEstudos"><strong>243</strong></p2>
-
-
-            </div>
-
-            <div class="Cursos">
-                <img src="/Home/imagens/bookmark 1.png" alt="bookmark" class="Curso">
-                <p class="pCursos">Cursos</p>
-                <p2 class="valorCursos"><strong>13</strong></p2>
-
-
-            </div>
-
-            <div class="Pagamentos">
-                <img src="/Home/imagens/usd-square 1.png" alt="usd-square" class="Pagamento">
-                <p class="pPagamento">Pagamento</p>
-                <p2 class="valorPagamento"><strong>INR 556,000</strong></p2>
-
-
-            </div>
-
-            <div class="Usuarios">
-                <img src="/Home/imagens/Vector.png" alt="Vector" class="user">
-                <p class="pUsuario">Usuarios</p>
-                <p2 class="valorUsuario"><strong>3</strong></p2>
-
-
-            </div>
-
-        </div>
-
-
-
-
-
-    </div>
-
-
-
-
-
-
-
-</body>
-
-</html>
+<body data-page="dashboard">
+  <div class="app-shell"><aside class="sidebar" data-sidebar></aside><div class="sidebar-overlay" data-sidebar-overlay></div>
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" data-menu-toggle aria-label="Abrir menu"><svg class="icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+        <div class="page-heading"><h1>Dashboard</h1><p>Visão geral do sistema</p></div>
+        <label class="global-search" aria-label="Pesquisa global"><svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="globalSearch" type="search" placeholder="Buscar usuários, cursos, estudos..."></label>
+      </header>
+      <section class="stats-grid" aria-label="Indicadores">
+        <article class="stat-card"><div class="stat-head"><span class="stat-icon" data-icon="studies"></span><span>Estudos</span></div><div class="stat-value" id="studiesTotal">0</div><div class="stat-meta" id="studiesMeta">Nenhum estudo cadastrado</div></article>
+        <article class="stat-card"><div class="stat-head"><span class="stat-icon" data-icon="courses"></span><span>Cursos</span></div><div class="stat-value" id="coursesTotal">0</div><div class="stat-meta" id="coursesMeta">Nenhum curso cadastrado</div></article>
+        <article class="stat-card"><div class="stat-head"><span class="stat-icon" data-icon="payments"></span><span>Pagamentos</span></div><div class="stat-value" id="paymentsTotal">R$ 0,00</div><div class="stat-meta" id="paymentsMeta">Nenhum pagamento registrado</div></article>
+        <article class="stat-card featured"><div class="stat-head"><span class="stat-icon" data-icon="users"></span><span>Usuários</span></div><div class="stat-value" id="usersTotal">0</div><div class="stat-meta" id="usersMeta">Nenhum usuário cadastrado</div></article>
+      </section>
+      <section class="dashboard-grid">
+        <article class="panel"><div class="panel-head"><div class="panel-title"><span data-icon="chart"></span><h2>Evolução de Estudos</h2></div></div><div class="chart-wrap"><canvas id="studiesChart" aria-label="Estudos cadastrados por mês"></canvas><div class="chart-tooltip" id="chartTooltip" hidden></div><div class="chart-empty" id="chartEmpty" hidden><span>O gráfico aparecerá quando houver estudos cadastrados.</span></div></div></article>
+        <article class="panel"><div class="panel-head"><div class="panel-title"><span data-icon="layers"></span><h2>Distribuição</h2></div></div><div class="donut-layout"><div class="donut"><div class="donut-center"><strong id="distributionTotal">0</strong><span>Total</span></div></div><div class="legend" id="distributionLegend"></div></div></article>
+        <article class="panel"><div class="panel-head"><div class="panel-title"><span data-icon="users"></span><h2>Usuários recentes</h2></div><a class="text-link" href="../Usuarios/index.html">Ver todos →</a></div><div class="table-scroll" id="recentUsers"></div></article>
+        <article class="panel"><div class="panel-head"><div class="panel-title"><span data-icon="bolt"></span><h2>Ações rápidas</h2></div></div><div class="quick-actions">
+          <a class="quick-action" href="../Usuarios/index.html?action=new"><span data-icon="plus"></span><span>Novo usuário</span></a><a class="quick-action" href="../Cursos/index.html?action=new"><span data-icon="courses"></span><span>Novo curso</span></a><a class="quick-action" href="../Estudantes/index.html?action=new"><span data-icon="studies"></span><span>Novo estudo</span></a><a class="quick-action" href="../Pagamentos/index.html?action=new"><span data-icon="payments"></span><span>Registrar pagamento</span></a>
+        </div></article>
+      </section>
+    </main>
+  </div><script src="../assets/app.js"></script><script src="index.js"></script>
+</body></html>

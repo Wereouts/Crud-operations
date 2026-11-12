@@ -1,0 +1,53 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Configurações do CRUD Operations"><title>Configurações | CRUD Operations</title><link rel="stylesheet" href="../assets/app.css"></head>
+<body data-page="configuracoes"><div class="app-shell"><aside class="sidebar" data-sidebar></aside><div class="sidebar-overlay" data-sidebar-overlay></div><main class="main">
+  <header class="topbar"><button class="mobile-menu" data-menu-toggle aria-label="Abrir menu"><svg class="icon" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button><div class="page-heading"><h1>Configurações</h1><p>Personalize sua experiência no sistema</p></div></header>
+  <div class="settings-layout">
+    <nav class="panel settings-nav" aria-label="Categorias das configurações">
+      <button class="settings-tab" data-section="perfil"><span class="settings-tab-icon" data-icon="profile"></span><span><strong>Meu Perfil</strong><span>Dados da conta e foto</span></span></button>
+      <button class="settings-tab" data-section="aparencia"><span class="settings-tab-icon" data-icon="palette"></span><span><strong>Aparência</strong><span>Tema, cores e layout</span></span></button>
+      <button class="settings-tab" data-section="seguranca"><span class="settings-tab-icon" data-icon="shield"></span><span><strong>Segurança</strong><span>Senha, sessão e acessos</span></span></button>
+      <button class="settings-tab" data-section="notificacoes"><span class="settings-tab-icon" data-icon="bell"></span><span><strong>Notificações</strong><span>Avisos e alertas</span></span></button>
+      <button class="settings-tab" data-section="dados"><span class="settings-tab-icon" data-icon="database"></span><span><strong>Dados e Sistema</strong><span>Exportação e paginação</span></span></button>
+    </nav>
+    <div class="settings-content">
+      <section class="panel settings-section" data-panel="perfil" hidden>
+        <div class="settings-heading"><span data-icon="profile"></span><div><h2>Meu Perfil</h2><p>Atualize seus dados pessoais e a foto exibida no sistema.</p></div></div>
+        <div class="profile-editor"><div class="profile-photo-editor"><img id="profilePreview" src="../Home/imagens/eu.jpg" alt="Foto do perfil"><label for="profilePhoto"><span data-icon="image"></span>Alterar foto</label><input id="profilePhoto" type="file" accept="image/png,image/jpeg,image/webp"></div><div class="settings-form-grid">
+          <div class="field full"><label for="profileName">Nome</label><input id="profileName" maxlength="100" autocomplete="name" required></div>
+          <div class="field full"><label for="profileEmail">E-mail</label><input id="profileEmail" type="email" autocomplete="email" required></div>
+          <div class="field full"><label>Perfil de acesso</label><div class="readonly-value" id="profileRole">Administrador</div></div>
+        </div></div>
+      </section>
+      <section class="panel settings-section" data-panel="aparencia">
+        <div class="settings-heading"><span data-icon="palette"></span><div><h2>Aparência</h2><p>Personalize o visual do sistema conforme sua preferência.</p></div></div>
+        <div class="settings-list">
+          <div class="setting-row"><div class="setting-copy"><span data-icon="sun"></span><div><strong>Tema</strong><span>Escolha entre o tema claro e escuro.</span></div></div><div class="segmented"><label><input type="radio" name="theme" value="light"><span><i data-icon="sun"></i>Claro</span></label><label><input type="radio" name="theme" value="dark"><span><i data-icon="moon"></i>Escuro</span></label></div></div>
+          <div class="setting-row"><div class="setting-copy"><span data-icon="palette"></span><div><strong>Cor principal</strong><span>Defina a cor de destaque do sistema.</span></div></div><div class="color-options" id="colorOptions"><button class="color-option" type="button" data-color="#ffc107" style="--swatch:#ffc107" aria-label="Amarelo"></button><button class="color-option" type="button" data-color="#ff9f1c" style="--swatch:#ff9f1c" aria-label="Laranja"></button><button class="color-option" type="button" data-color="#3b6ff5" style="--swatch:#3b6ff5" aria-label="Azul"></button><button class="color-option" type="button" data-color="#8b45d9" style="--swatch:#8b45d9" aria-label="Roxo"></button><button class="color-option" type="button" data-color="#22a965" style="--swatch:#22a965" aria-label="Verde"></button><button class="color-option" type="button" data-color="#ed4040" style="--swatch:#ed4040" aria-label="Vermelho"></button></div></div>
+          <div class="setting-row"><div class="setting-copy"><span data-icon="menu"></span><div><strong>Menu lateral compacto</strong><span>Exibir apenas os ícones no menu lateral.</span></div></div><label class="switch"><input id="compactMenu" type="checkbox"><span></span></label></div>
+          <div class="setting-row"><div class="setting-copy"><span data-icon="type"></span><div><strong>Tamanho da fonte</strong><span>Ajuste o tamanho da fonte do sistema.</span></div></div><select class="settings-select" id="fontSize"><option value="small">Pequeno</option><option value="medium">Médio</option><option value="large">Grande</option></select></div>
+        </div>
+        <div class="preview-card"><h3>Pré-visualização</h3><p>Veja como o sistema ficará com as suas preferências.</p><div class="dashboard-preview" id="dashboardPreview"><div class="preview-sidebar"><span>◆ CRUD</span><div class="preview-nav"><span>▦ Dashboard</span><span>♙ Usuários</span><span>◇ Estudos</span></div></div><div class="preview-main"><div class="preview-stat"><span>Estudos</span><strong>—</strong></div><div class="preview-stat"><span>Cursos</span><strong>—</strong></div><div class="preview-stat"><span>Usuários</span><strong>—</strong></div></div></div></div>
+      </section>
+      <section class="panel settings-section" data-panel="seguranca" hidden>
+        <div class="settings-heading"><span data-icon="shield"></span><div><h2>Segurança</h2><p>Proteja sua conta e gerencie sua senha.</p></div></div>
+        <div class="settings-form-grid" style="margin-top:25px"><div class="field full"><label for="currentPassword">Senha atual</label><input id="currentPassword" type="password" autocomplete="current-password"></div><div class="field"><label for="newPassword">Nova senha</label><input id="newPassword" type="password" minlength="8" autocomplete="new-password"></div><div class="field"><label for="confirmPassword">Confirmar nova senha</label><input id="confirmPassword" type="password" minlength="8" autocomplete="new-password"></div></div>
+        <p class="form-error" id="passwordError" role="alert"></p><div class="backend-notice"><strong>Integração necessária:</strong> este projeto não possui backend ou endpoint seguro de autenticação. A senha será validada localmente, mas nenhuma alteração será enviada ou armazenada até que esse endpoint exista.</div>
+      </section>
+      <section class="panel settings-section" data-panel="notificacoes" hidden>
+        <div class="settings-heading"><span data-icon="bell"></span><div><h2>Notificações</h2><p>Escolha quais avisos deseja receber no sistema.</p></div></div><div class="settings-list">
+          <div class="setting-row"><div class="setting-copy"><span data-icon="bell"></span><div><strong>Notificações gerais</strong><span>Permitir avisos visuais do sistema.</span></div></div><label class="switch"><input type="checkbox" data-notification="general"><span></span></label></div>
+          <div class="setting-row"><div class="setting-copy"><span data-icon="users"></span><div><strong>Novos usuários</strong><span>Avisos relacionados a novos cadastros.</span></div></div><label class="switch"><input type="checkbox" data-notification="users"><span></span></label></div>
+          <div class="setting-row"><div class="setting-copy"><span data-icon="payments"></span><div><strong>Pagamentos registrados</strong><span>Avisos relacionados a pagamentos.</span></div></div><label class="switch"><input type="checkbox" data-notification="payments"><span></span></label></div>
+          <div class="setting-row"><div class="setting-copy"><span data-icon="settings"></span><div><strong>Atualizações do sistema</strong><span>Novidades e alterações importantes.</span></div></div><label class="switch"><input type="checkbox" data-notification="system"><span></span></label></div>
+        </div>
+      </section>
+      <section class="panel settings-section" data-panel="dados" hidden>
+        <div class="settings-heading"><span data-icon="database"></span><div><h2>Dados e Sistema</h2><p>Gerencie tabelas, exportações e informações técnicas.</p></div></div>
+        <div class="setting-row"><div class="setting-copy"><span data-icon="table"></span><div><strong>Registros por página</strong><span>Aplicado às tabelas do sistema.</span></div></div><select class="settings-select" id="tableRows"><option value="10">10 registros</option><option value="25">25 registros</option><option value="50">50 registros</option></select></div>
+        <h3 style="margin:25px 0 5px;font-size:15px">Exportação em CSV</h3><p style="margin:0;color:var(--muted);font-size:12px">Os arquivos são gerados em UTF-8 usando os registros cadastrados.</p><div class="export-grid"><button class="btn export-button" type="button" data-export="usuarios"><span data-icon="download"></span>Exportar usuários</button><button class="btn export-button" type="button" data-export="cursos"><span data-icon="download"></span>Exportar cursos</button><button class="btn export-button" type="button" data-export="estudos"><span data-icon="download"></span>Exportar estudos</button><button class="btn export-button" type="button" data-export="pagamentos"><span data-icon="download"></span>Exportar pagamentos</button></div>
+        <div class="system-info"><div><span>Projeto</span><strong>CRUD Operations</strong></div><div><span>Versão</span><strong>Não informada</strong></div><div><span>Tecnologias</span><strong>HTML, CSS e JavaScript</strong></div></div>
+      </section>
+      <footer class="panel settings-actions"><button class="btn btn-secondary" type="button" id="cancelSettings">Cancelar</button><button class="btn btn-primary" type="button" id="saveSettings"><span data-icon="check"></span>Salvar alterações</button></footer>
+    </div>
+  </div>
+</main></div><script src="../assets/app.js"></script><script src="index.js"></script></body></html>
